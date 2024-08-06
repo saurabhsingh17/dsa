@@ -21,10 +21,6 @@ public class PrefixRangeSum {
     }
 
     public int rangeSum(int left, int right) {
-        if (left == 0) {
-            return prefixSum[right];
-        } else {
-            return prefixSum[right] - prefixSum[left - 1];
-        }
+        return left > 0 ? prefixSum[right] - prefixSum[left - 1] : prefixSum[right];
     }
 }
